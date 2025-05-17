@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; style-src 'self'; script-src 'self'">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/index.css">
+    <title>NMS Archive</title>
+  </head>
+  <body>
+    <header class="header-section glass">
+      <div class="logo">NMS Archive</div>
+      <div class="controls">
+        <!-- <input class="search-input" type="text" placeholder="🔍 Search by name…"> -->
+      
+        <!-- Filter by tags UI -->
+        <div class="filter-ui">
+          <div class="filter-bubble-container"></div>
+          <button id="filter-tag-btn" class="btn filter-btn">Filter Tags</button>
+          <div id="filter-selector" class="filter-selector hidden glass"></div>
+        </div>
+      </div>
+      <div class="actions">
+        <div class="notification-badge">0</div>
+        <button id="add-image-button" class="btn glass-btn">Add Image</button>
+      </div>
+    </header>
+
+    <main class="image-display"></main>
+
+    <div class="add-image-container glass hidden">
+      <button id="upload-back" class="btn back-btn">&larr; Back</button>
+      <h2>Upload Image</h2>
+      <div id="drop-zone" class="drop-zone">
+        <p>Drag &amp; drop, paste, or click to upload</p>
+        <input id="file-input" type="file" accept="image/*" hidden>
+      </div>
+    </div>
+
+    <div class="details page hidden glass">
+      <!-- DETAILS HEADER: back + delete -->
+      <div class="details-header">
+        <button id="details-back" class="btn back-btn">&larr; Back</button>
+        <button id="delete-btn"    class="btn delete-btn">Delete</button>
+      </div>
+
+      <div class="details-content">
+        <img class="details-image" src="" alt="">
+        <div class="details-meta">
+          <label>Tags:</label>
+          <div class="tag-bubble-container"></div>
+          <button id="add-tag-btn" class="btn add-tag-btn">+ Add Tag</button>
+          <div class="tag-selector hidden glass"></div>
+          <label>Description:</label>
+          <textarea class="details-desc" placeholder="Enter a description…"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <script src="../javascript/index.js"></script>
+    <script src="../javascript/upload_image.js"></script>
+  </body>
+</html>

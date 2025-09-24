@@ -420,9 +420,151 @@ body {
   animation: pulse 1s infinite;
 }
 
-@keyframes pulse {
-  0%, 100% { opacity: 0.1; }
-  50% { opacity: 0.2; }
+/* Add loading, error, and empty states */
+.loading-spinner, .empty-state, .error-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem;
+  color: var(--fg-muted);
+  font-size: 1.1rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(var(--blur));
+}
+
+.loading-spinner {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.error-state {
+  color: var(--danger);
+}
+
+.empty-state {
+  color: var(--fg-muted);
+}
+
+.integrity-warning {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: var(--warning);
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  z-index: 10;
+  cursor: help;
+}
+
+/* Health Check Modal */
+.health-check-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 600px;
+  max-height: 80vh;
+  padding: 2rem;
+  z-index: 500;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.modal-header h3 {
+  font-size: 1.5rem;
+  color: var(--accent-light);
+  margin: 0;
+}
+
+.modal-content {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--glass-border);
+}
+
+.health-results {
+  padding: 1rem;
+  background: var(--glass-bg);
+  border-radius: var(--radius);
+  margin: 1rem 0;
+}
+
+.health-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.health-item:last-child {
+  border-bottom: none;
+}
+
+.health-status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.health-status.good {
+  background: var(--success);
+  color: white;
+}
+
+.health-status.warning {
+  background: var(--warning);
+  color: var(--bg-solid);
+}
+
+.health-status.error {
+  background: var(--danger);
+  color: white;
+}
+
+.recommendations {
+  margin-top: 1rem;
+}
+
+.recommendations ul {
+  list-style: none;
+  padding: 0;
+}
+
+.recommendations li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.recommendations li:before {
+  content: '💡';
+  position: absolute;
+  left: 0;
 }
 
 /* Enhanced details view */

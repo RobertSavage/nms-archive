@@ -21,6 +21,7 @@
         </div>
       </div>
       <div class="actions">
+        <button id="health-check-btn" class="btn btn-secondary" title="Check system health">🔧</button>
         <div class="notification-badge">0</div>
         <button id="add-image-button" class="btn btn-primary">Add Image</button>
       </div>
@@ -53,6 +54,21 @@
           <div class="tag-selector hidden glass"></div>
           <label>Description:</label>
           <textarea class="details-desc" placeholder="Enter a description…"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Health Check Modal -->
+    <div class="health-check-modal glass hidden">
+      <div class="modal-header">
+        <h3>System Health Check</h3>
+        <button id="health-close" class="btn back-btn">×</button>
+      </div>
+      <div class="modal-content">
+        <div id="health-results"></div>
+        <div class="modal-actions">
+          <button id="run-health-check" class="btn btn-primary">Run Health Check</button>
+          <button id="repair-database" class="btn btn-secondary">Repair Database</button>
         </div>
       </div>
     </div>

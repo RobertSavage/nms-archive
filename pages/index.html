@@ -21,18 +21,19 @@
         </div>
       </div>
       <div class="actions">
+        <button id="health-check-btn" class="btn btn-secondary" title="Check system health">🔧</button>
         <div class="notification-badge">0</div>
-        <button id="add-image-button" class="btn glass-btn">Add Image</button>
+        <button id="add-image-button" class="btn btn-primary">Add Image</button>
       </div>
     </header>
 
     <main class="image-display"></main>
 
     <div class="add-image-container glass hidden">
-      <button id="upload-back" class="btn back-btn">&larr; Back</button>
+      <button id="upload-back" class="btn back-btn">← Back</button>
       <h2>Upload Image</h2>
       <div id="drop-zone" class="drop-zone">
-        <p>Drag &amp; drop, paste, or click to upload</p>
+        <p>Drag & drop, paste, or click to upload</p>
         <input id="file-input" type="file" accept="image/*" hidden>
       </div>
     </div>
@@ -40,8 +41,8 @@
     <div class="details page hidden glass">
       <!-- DETAILS HEADER: back + delete -->
       <div class="details-header">
-        <button id="details-back" class="btn back-btn">&larr; Back</button>
-        <button id="delete-btn"    class="btn delete-btn">Delete</button>
+        <button id="details-back" class="btn back-btn">← Back</button>
+        <button id="delete-btn" class="btn delete-btn">Delete</button>
       </div>
 
       <div class="details-content">
@@ -53,6 +54,21 @@
           <div class="tag-selector hidden glass"></div>
           <label>Description:</label>
           <textarea class="details-desc" placeholder="Enter a description…"></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Health Check Modal -->
+    <div class="health-check-modal glass hidden">
+      <div class="modal-header">
+        <h3>System Health Check</h3>
+        <button id="health-close" class="btn back-btn">×</button>
+      </div>
+      <div class="modal-content">
+        <div id="health-results"></div>
+        <div class="modal-actions">
+          <button id="run-health-check" class="btn btn-primary">Run Health Check</button>
+          <button id="repair-database" class="btn btn-secondary">Repair Database</button>
         </div>
       </div>
     </div>
